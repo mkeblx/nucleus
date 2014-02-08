@@ -1,0 +1,180 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 500;
+	margin: 0;
+	padding: 20px;
+}
+
+#container {
+	width: 800px;
+}
+
+#head {
+
+}
+
+#head h1 {
+	font-size: 34px;
+	line-height: 34px;
+	font-weight: 300;
+	margin-top: 0px;
+	margin-bottom: 26px;
+}
+
+#head .btn {
+	padding: 8px 12px 13px;
+	border: 1px solid #ddd;
+	font-size: 22px;
+	line-height: 22px;
+}
+
+#projects-container {
+	outline: 1px solid #ddd;
+	position: relative;
+	background-color: #f5f5f5;
+	width: 800px;
+	min-height: 1000px;
+	padding: 10px;
+}
+
+/* projects */
+
+#projects {
+
+}
+
+.proj {
+	border: 1px solid #333;
+	margin-left: 0px;
+	background-color: #fff;
+
+	box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+
+	transition: box-shadow 0.3s ease-in;
+}
+
+.proj.u1 {
+	width: 150px;
+	height: 200px;
+}
+
+.proj.u2 {
+	width: 225px;
+	height: 300px;
+}
+
+.proj.u3 {
+	width: 300px;
+	height: 400px;
+}
+
+.proj:hover {
+	cursor: pointer;
+	box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.proj:hover .corner {
+	cursor: pointer;
+
+	border-left-width: 35px;
+	border-top-width: 35px;
+}
+
+#projects > div .content {
+	padding: 10px;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #111;
+	margin-bottom: 10px;
+}
+
+.desc {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+}
+
+.u1 .title {
+	font-size: 18px;
+	line-height: 18px;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+}
+
+.u1 .desc {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.u2 .title {
+	font-size: 22px;
+	line-height: 22px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.u2 .desc {
+	font-size: 15px;
+	line-height: 21px;
+}
+
+.corner {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-top-width: 20px;
+	border-top-style: solid;
+	position: absolute;
+	right: 0;
+
+	transition: border 0.3s ease-in;
+}
+
+/* buttons */
+
+.btn {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-weight: 300;
+
+	transition: background 0.3s ease-in;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
+}
+
+.btn i {
+	font-weight: 300;
+	font-style: normal;
+}
+
+.btn:hover {
+	cursor: pointer;
+	background-color: #fafafa;
+}
+
+
+
+.loading {
+	margin-left: 3px;
+	margin-bottom: 2px;
+}
+
+/* misc */
+
+.pull-right { float: right; }
+.pull-left  { float: left;  }
