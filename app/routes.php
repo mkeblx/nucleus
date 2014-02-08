@@ -6,11 +6,11 @@ Route::get('/', function(){
 
 });
 
-Route::get('/projects', ['as' => 'projects', 'uses' => 'ProjectController@index']);
+// Route::group(['before' => 'auth'], function() {
 
-/*	$projects = File::get(public_path().'/data/projects.json');
+Route::resource('projects', 'ProjectController');
+//Route::resource('note', 'NoteController');
+//Route::resource('list', 'ListController');
+//Route::resource('tag', 'TagController');
 
-	$response = Response::make($projects);
-	$response->header('Content-Type', 'application/json');
-	return $response;
-});*/
+// });

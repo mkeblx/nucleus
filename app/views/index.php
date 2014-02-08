@@ -13,7 +13,7 @@
 <div id="container">
 	<div id="head">
 		<div class="btn pull-right" id="create-proj"><i>+</i> create project</div>
-		<h1>nucleus / projects view <img class="loading" src="/img/loading.gif"></h1>
+		<h1>nucleus / projects view <img class="loading hide" src="/img/loading.gif"></h1>
 	</div>
 	<div id="projects-container">
 		<div id="projects"></div>
@@ -22,11 +22,11 @@
 
 <!-- templates -->
 <script id="proj-mini-tmpl" type="text/template">
-<div class="proj" data-id="{{ id }}">
-	<div class="corner"></div>
+<div class="proj u{{ _.random(1,1) }}" data-id="{{ id }}" style="border-color: {{ color }}">
+	<div class="corner" style="border-top-color: {{ color }}"></div>
 	<div class="content">
-		<div class="title">{{ title }}</div>
-		<div class="desc">{{ desc }}</div>
+		<div class="title">{{ name }}</div>
+		<div class="desc">{{ description }}</div>
 	</div>
 </div>
 </script>
@@ -51,14 +51,15 @@
 	<button class="destroy"></button>
 </div>
 </script>
+<!-- ^templates -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="/js/console.js"></script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/js/backbone-min.js"></script>
-<script src="/js/console.js"></script>
 <script src="/js/packery.pkgd.min.js"></script>
 <script src="/js/draggabilly.pkgd.min.js"></script>
-<script>var ns = ns || {};</script>
+<script src="/js/setup.js"></script>
 <script src="/js/models/project.js"></script>
 <script src="/js/collections/projects.js"></script>
 <script src="/js/views/projects-view.js"></script>

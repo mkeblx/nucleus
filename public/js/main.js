@@ -1,45 +1,36 @@
-var ns = ns || {};
-
-var colors = [
-	'#805056',
-	'#F16522',
-	'#FCBD54',
-	'#8DC63E',
-	'#84C780',
-	'#298ACA',
-	'#8772A5',
-	'#F072AB',
-	'#E44044'
-];
-
-_.templateSettings = {
-	'interpolate': /{{([\s\S]+?)}}/g
+//default data
+var data = {
+	id: 1,
+	name: 'New Project',
+	slug: 'new-project',
+	description: 'Enter project description here',
+	type: ''
 };
+
 
 $(function(){
 	setTimeout(init, 600);
 });
 
+
 var pckry, tmpl;
 
 var $projects;
 
-
-
 var router;
-
-//default data
-var data = {
-	id: 1,
-	title: 'New Project',
-	desc: 'Enter project description here'
-};
-
+var projectsView, projects;
 
 
 
 function init() {
 	tmpl = _.template($('#proj-mini-tmpl').html());
+
+	$(document)
+		.ajaxStart(function(){
+			$('.loading').fadeIn(10); })
+		.ajaxStop(function(){
+			$('.loading').fadeOut(200);});
+
 
 	$projects = $('#projects');
 
@@ -47,11 +38,17 @@ function init() {
 
 	setupPackery();
 
-	setTimeout(function(){ $('.loading').fadeToggle(200) }, 500);
+	projects = new ns.Projects();
+	
+	projects.fetch({
+		success: function(resp) {
+			projectsView = new ns.ProjectsView({
+				collection: resp
+			});
 
-	load('projects');
-
-	$('#create-proj').on('click', createProject);
+			projectsView.render();
+		}
+	});
 
 	setupEvents();
 }
@@ -60,8 +57,8 @@ function setupBB() {
 	ns.Router = Backbone.Router.extend({
 
 		routes: {
-			"projects": "projects",
-			"projects/:id/:ref": "projects"
+			'projects'				 : 'projects',
+			'projects/:id/:ref': 'projects'
 		},
 
 		projects: function(id, ref){
@@ -73,14 +70,10 @@ function setupBB() {
 
 	Backbone.history.start();
 
-	
 }
 
 function setupEvents() {
-	$projects.on('click', '.corner', function(ev){
-		var $this = $(this);
-		var id = $this.parent().data('id');
-	});
+	$('#create-proj').on('click', createProject);
 }
 
 function createProject() {
@@ -91,41 +84,13 @@ function createProject() {
 }
 
 function createEl(data) {
+	data.color = _.sample(colors);
 	var $div = $(tmpl(data));
-
-	var color = _.sample(colors);
-	$div.css('border-color', color);
-	$div.find('.corner')
-		.css('border-top-color', color);
-
-	$div.addClass('u'+_.random(1,3));
 
 	var draggie = new Draggabilly($div[0]);
 	pckry.bindDraggabillyEvents(draggie);
 
 	return $div;
-}
-
-function load(file) {	
-	$.ajax({
-		url: file,
-		dataType: 'json',
-		success: function(resp){
-			var data = resp.data;
-
-			_.each(data, function(p, i){
-
-				setTimeout(function(){
-					var $div = createEl(p);
-					$projects.prepend($div);
-					pckry.appended($div);
-				}, 30*i);
-			});
-		}, 
-		error: function(request, textStatus, errorThrown){
-			console.log(arguments);
-		}
-	});
 }
 
 function setupPackery() {
@@ -135,14 +100,4 @@ function setupPackery() {
 	});
 
 	pckry.bindResize();
-
-	return;
-
-	var itemElems = pckry.getItemElements();
-	for (var i=0, len = itemElems.length; i < len; i++) {
-		var elem = itemElems[i];
-		var draggie = new Draggabilly(elem);
-		pckry.bindDraggabillyEvents(draggie);
-	}
-
 }

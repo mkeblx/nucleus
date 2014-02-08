@@ -1,15 +1,42 @@
 <?php
 
-class ProjectController extends BaseController {
+class ProjectController extends \BaseController {
 
 	public function index()
 	{
-		//tmp
-		$projects = File::get(public_path().'/data/projects.json');
+		$projects = Project::all();
+		
+		return $projects;
+	}
 
-		$response = Response::make($projects);
-		$response->header('Content-Type', 'application/json');
-		return $response;
+	public function store()
+	{
+		$data = Input::all();
+
+		$p = Project::create($data);
+
+		return $p;
+	}
+
+	public function show($id)
+	{
+		$project = Project::findOrFail($id);
+
+		return $project;
+	}
+
+	public function update($id)
+	{
+		$data = Input::all();
+
+		$project = Project::update($data);
+
+		return $project;
+	}
+
+	public function destroy($id)
+	{
+		$project = Project::findOrFail($id);
 	}
 
 }

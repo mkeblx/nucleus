@@ -11,10 +11,13 @@ class CreateProjects extends Migration {
 		{
 			$t->increments('id');
 			$t->string('name', 128);
+			$t->string('slug', 128);
 			$t->text('description');
+			$t->text('notes');
 			$t->string('type', 32);
 			$t->string('bg');
-			$t->int('active')->default(1);
+			$t->boolean('active')->default(1);
+			$t->integer('parent_id')->default(0);
 			$t->softDeletes();
 			$t->timestamps();
 		});
