@@ -1,6 +1,7 @@
 ns.ProjectView = Backbone.View.extend({
 
 	tagName: 'div',
+	'class': 'project',
 
 	tmpl: _.template($('#proj-tmpl')),
 

@@ -1,8 +1,8 @@
-ns.Note = Backbone.Model.extend({
+ns.User = Backbone.Model.extend({
 
 	defaults: {
 		name: '',
-		content: ''
+		email: ''
 	},
 
 	initialize: function() {

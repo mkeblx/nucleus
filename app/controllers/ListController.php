@@ -1,42 +1,42 @@
 <?php
 
-class NoteController extends \BaseController {
+class ListController extends \BaseController {
 
 	public function index()
 	{
-		$notes = Note::all();
+		$lists = List::all();
 
-		return $notes;
+		return $lists;
 	}
 
 	public function store()
 	{
 		$data = Input::all();
 
-		$n = Note::create($data);
+		$n = List::create($data);
 
 		return $n;
 	}
 
 	public function show($id)
 	{
-		$note = Note::findOrFail($id);
+		$list = List::findOrFail($id);
 
-		return $note;
+		return $list;
 	}
 
 	public function update($id)
 	{
 		$data = Input::all();
 
-		$note = Note::update($data);
+		$list = List::update($data);
 
-		return $note;
+		return $list;
 	}
 
 	public function destroy($id)
 	{
-		return Note::delete($id);
+		return List::delete($id);
 	}
 
 }

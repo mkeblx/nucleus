@@ -1,102 +1,143 @@
+/* line 3, sass/style.scss */
 *, *:before, *:after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
+/* line 7, sass/style.scss */
 body {
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
   margin: 0;
-  padding: 20px; }
+  padding: 20px;
+  min-width: 850px;
+}
 
+/* line 15, sass/style.scss */
 #container {
-  width: 800px; }
+  width: 810px;
+  margin: 0 auto;
+}
 
+/* line 24, sass/style.scss */
 #head h1 {
   font-size: 34px;
   line-height: 34px;
   font-weight: 300;
   margin-top: 0px;
-  margin-bottom: 26px; }
+  margin-bottom: 26px;
+}
 
+/* line 32, sass/style.scss */
 #head .btn {
   padding: 8px 12px 13px;
   border: 1px solid #ddd;
   font-size: 22px;
-  line-height: 22px; }
+  line-height: 22px;
+}
 
+/* line 39, sass/style.scss */
 #projects-container {
   outline: 1px solid #ddd;
   position: relative;
   background-color: #f5f5f5;
-  width: 800px;
+  width: 810px;
   min-height: 1000px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 /* projects */
+/* line 54, sass/style.scss */
 .proj {
   border: 1px solid #333;
   margin-left: 0px;
   background-color: #fff;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in; }
+  transition: box-shadow 0.3s ease-in;
+}
 
+/* line 64, sass/style.scss */
 .proj.u1 {
   width: 150px;
-  height: 200px; }
+  height: 200px;
+}
 
+/* line 69, sass/style.scss */
 .proj.u2 {
   width: 225px;
-  height: 300px; }
+  height: 300px;
+}
 
+/* line 74, sass/style.scss */
 .proj.u3 {
   width: 300px;
-  height: 400px; }
+  height: 400px;
+}
 
+/* line 79, sass/style.scss */
 .proj:hover {
   cursor: pointer;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
 
+/* line 84, sass/style.scss */
 .proj:hover .corner {
   cursor: pointer;
   border-left-width: 35px;
-  border-top-width: 35px; }
+  border-top-width: 35px;
+}
 
+/* line 91, sass/style.scss */
 #projects > div .content {
-  padding: 10px; }
+  padding: 10px;
+}
 
+/* line 95, sass/style.scss */
 .title {
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
   padding-bottom: 12px;
   border-bottom: 1px solid #111;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
+/* line 104, sass/style.scss */
 .desc {
   font-size: 16px;
   line-height: 22px;
   font-weight: 300;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+}
 
+/* line 111, sass/style.scss */
 .u1 .title {
   font-size: 18px;
   line-height: 18px;
   padding-bottom: 8px;
-  margin-bottom: 8px; }
+  margin-bottom: 8px;
+}
 
+/* line 118, sass/style.scss */
 .u1 .desc {
   font-size: 14px;
-  line-height: 18px; }
+  line-height: 18px;
+}
 
+/* line 123, sass/style.scss */
 .u2 .title {
   font-size: 22px;
   line-height: 22px;
   padding-bottom: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
+/* line 130, sass/style.scss */
 .u2 .desc {
   font-size: 15px;
-  line-height: 21px; }
+  line-height: 21px;
+}
 
+/* line 135, sass/style.scss */
 .corner {
   width: 0;
   height: 0;
@@ -105,9 +146,11 @@ body {
   border-top-style: solid;
   position: absolute;
   right: 0;
-  transition: border 0.3s ease-in; }
+  transition: border 0.3s ease-in;
+}
 
 /* buttons */
+/* line 149, sass/style.scss */
 .btn {
   border: 1px solid #ddd;
   border-radius: 3px;
@@ -118,23 +161,34 @@ body {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+}
 
+/* line 164, sass/style.scss */
 .btn i {
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+}
 
+/* line 169, sass/style.scss */
 .btn:hover {
   cursor: pointer;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+}
 
+/* line 176, sass/style.scss */
 .loading {
   margin-left: 3px;
-  margin-bottom: 2px; }
+  margin-bottom: 2px;
+}
 
 /* misc */
+/* line 183, sass/style.scss */
 .pull-right {
-  float: right; }
+  float: right;
+}
 
+/* line 184, sass/style.scss */
 .pull-left {
-  float: left; }
+  float: left;
+}
