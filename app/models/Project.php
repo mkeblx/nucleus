@@ -42,7 +42,7 @@ class Project extends Eloquent {
 	}
 
 	public function tags() {
-		return $this->hasMany('Tag');
+		return $this->belongsToMany('Tag');
 	}
 
 	public static function scopeActive($query)

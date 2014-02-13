@@ -1,7 +1,7 @@
 ns.ProjectView = Backbone.View.extend({
 
 	tagName: 'div',
-	'class': 'project',
+	'class': 'proj',
 
 	tmpl: _.template($('#proj-tmpl')),
 
@@ -12,7 +12,7 @@ ns.ProjectView = Backbone.View.extend({
 	render: function() {
 		this.$el.html(this.tmpl(this.model.attributes));
 		return this;
-	}
+	},
 
 	details: function() {
 

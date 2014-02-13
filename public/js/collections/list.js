@@ -1,6 +1,6 @@
-ns.Todos = Backbone.Collection.extend({
+ns.List = Backbone.Collection.extend({
 
-	model: ns.Todo,
+	model: ns.Item,
 
 	completed: function() {
 		return this.filter(function(todo) {

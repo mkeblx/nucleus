@@ -1,4 +1,4 @@
-ns.Todo = Backbone.Model.extend({
+ns.Item = Backbone.Model.extend({
 
 	defaults: {
 		title: '',

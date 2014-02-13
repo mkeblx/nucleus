@@ -36,7 +36,7 @@ body {
 }
 
 /* line 39, sass/style.scss */
-#projects-container {
+#main-container {
   outline: 1px solid #ddd;
   position: relative;
   background-color: #f5f5f5;

@@ -15,6 +15,7 @@ class CreateUsers extends Migration {
 			$t->string('name', 64);
 			$t->string('img');
 			$t->boolean('active')->default(1);
+			$t->timestamp('last_login');
 			$t->timestamps();
 		});
 	}

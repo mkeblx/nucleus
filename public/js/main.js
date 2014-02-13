@@ -18,6 +18,10 @@ var pckry, tmpl;
 var $projects;
 
 var router;
+
+var app;
+var header;
+
 var projectsView, projects;
 
 
@@ -29,28 +33,14 @@ function init() {
 		.ajaxStart(function(){
 			$('.loading').fadeIn(10); })
 		.ajaxStop(function(){
-			$('.loading').fadeOut(200);});
+			$('.loading').fadeOut(200); });
 
 
 	$projects = $('#projects');
 
-	setupBB();
-
 	setupPackery();
 
-	projects = new ns.Projects();
-	
-	projects.fetch({
-		success: function(resp) {
-			projectsView = new ns.ProjectsView({
-				collection: resp
-			});
-
-			projectsView.render();
-		}
-	});
-
-	setupEvents();
+	setupBB();
 }
 
 function setupBB() {
@@ -70,27 +60,22 @@ function setupBB() {
 
 	Backbone.history.start();
 
-}
+	projects = new ns.Projects();
 
-function setupEvents() {
-	$('#create-proj').on('click', createProject);
-}
+	app = new ns.AppView();
 
-function createProject() {
-	var $div = createEl(data);
+	header = new ns.HeaderView();
 
-	$projects.prepend($div);
-	pckry.prepended($div);
-}
+	projects.fetch({
+		success: function(resp) {
+			projectsView = new ns.ProjectsView({
+				collection: resp
+			});
 
-function createEl(data) {
-	data.color = _.sample(colors);
-	var $div = $(tmpl(data));
+			projectsView.render();
+		}
+	});
 
-	var draggie = new Draggabilly($div[0]);
-	pckry.bindDraggabillyEvents(draggie);
-
-	return $div;
 }
 
 function setupPackery() {

@@ -2,7 +2,9 @@ ns.User = Backbone.Model.extend({
 
 	defaults: {
 		name: '',
-		email: ''
+		email: '',
+		img: null,
+		active: 1
 	},
 
 	initialize: function() {

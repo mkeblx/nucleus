@@ -8,12 +8,22 @@ ns.AppView = Backbone.View.extend({
 		'': ''
 	},
 
+	initialize: function() {
+		this.listenTo(projects, 'add', this.addOne);
+		this.listenTo(projects, 'reset', this.addAll);
+	},
+
 	render: function() {
 
 	},
 
-	initialize: function() {
+	addOne: function() {
 
+	},
+
+	addAll: function() {
+		
 	}
+
 
 });
