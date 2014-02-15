@@ -9,21 +9,24 @@ define('HEX',   '[A-Fa-f0-9]+');
 
 
 // single page app
-Route::get('/', function(){
+Route::get('/', ['as' => 'root', function(){
 	return View::make('index');
-});
+}]);
 
 
 //auth
-Route::post('login', ['as' =>  'login', 'uses' => 'AuthController@login']);
+Route::post('login', ['as' => 'login',  'uses' => 'AuthController@login']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 
-
-// Route::group(['before' => 'auth'], function() {
+//tmp: guest => auth
+Route::group(['before' => 'guest|ajax'], function() {
 
 	Route::resource('projects', 'ProjectController');
+
+	//todo: nested routing off of projects i.e. projects/9/lists/3 etc
+	
 	//Route::resource('note', 'NoteController');
 	//Route::resource('list', 'ListController');
 	//Route::resource('tag', 'TagController');
 
-// });
+});

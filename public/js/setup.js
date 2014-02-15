@@ -17,7 +17,9 @@ _.templateSettings = {
 };
 
 function slugify(str) {
-	return str.toLowerCase()
-			 			.replace(/[^\w ]+/g,'')
-			 			.replace(/ +/g,'-');
+	var s =
+		str.toLowerCase()
+			.replace(/[^\w ]+/g,'')
+			.replace(/ +/g,'-');
+	return s;
 }

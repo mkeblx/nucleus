@@ -1,11 +1,15 @@
-//default data
-var data = {
-	id: 1,
-	name: 'New Project',
-	slug: 'new-project',
-	description: 'Enter project description here',
-	type: ''
+/*
+main app
+*/
+
+var app = app || {};
+
+app.name = 'nucleus';
+
+app.config = {
+	debug: 1
 };
+
 
 
 $(function(){
@@ -13,22 +17,22 @@ $(function(){
 });
 
 
-var pckry, tmpl;
+
+var pckry;
 
 var $projects;
 
 var router;
 
-var app;
+var appView;
 var header;
 
-var projectsView, projects;
+var projects;
 
+var projectsView;
 
 
 function init() {
-	tmpl = _.template($('#proj-mini-tmpl').html());
-
 	$(document)
 		.ajaxStart(function(){
 			$('.loading').fadeIn(10); })
@@ -44,27 +48,17 @@ function init() {
 }
 
 function setupBB() {
-	ns.Router = Backbone.Router.extend({
-
-		routes: {
-			'projects'				 : 'projects',
-			'projects/:id/:ref': 'projects'
-		},
-
-		projects: function(id, ref){
-			alert('projects');
-		}
-
-	});
-	router = new ns.Router;
-
-	Backbone.history.start();
-
 	projects = new ns.Projects();
 
-	app = new ns.AppView();
-
 	header = new ns.HeaderView();
+
+	appView = new ns.AppView();
+
+	router = new ns.Router;
+
+	Backbone.history.start({pushState: true});
+
+
 
 	projects.fetch({
 		success: function(resp) {

@@ -7,7 +7,13 @@ ns.HeaderView = Backbone.View.extend({
 	},
 
 	initialize: function() {
+		Backbone.on('nav', this.update);
+	},
 
+	update: function(dest) {
+		console.log(dest);
+		var title = [app.name, dest.title].join(' / ');
+		this.$('.bread').html(title);
 	},
 
 	render: function() {
@@ -22,7 +28,7 @@ ns.HeaderView = Backbone.View.extend({
 
 		var project = new ns.Project({ name: name });
 		
-		projects.add(project);
+		projects.create(project);
 
 		//
 		//projectsView.addProject(project);

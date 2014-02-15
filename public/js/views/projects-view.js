@@ -12,7 +12,7 @@ ns.ProjectsView = Backbone.View.extend({
 	},
 
 	initialize: function() {
-		this.listenTo(projects, 'add', this.addUpdate);
+		this.listenTo(this.collection, 'add', this.addUpdate);
 	},
 
 	render: function() {
@@ -32,22 +32,24 @@ ns.ProjectsView = Backbone.View.extend({
 		return this.pTmpl(data);
 	},
 
-	addUpdate: function(el) {
-		console.log('added:', el);
+	addUpdate: function(p) {
+		console.log('added:', p);
+
+		var $pel = $(this.createEl(p.attributes));
+		this.append($pel);
 	},
 
 	addProject: function(project) {
 		this.collection.create(project);
 
 		var $pel = $(this.createEl(project.attributes));
-
 		this.append($pel);
-		this.setupDrag($pel);
 	},
 
 	append: function($pel) {
 		this.$el.prepend($pel);
 		pckry.prepended($pel);
+		this.setupDrag($pel);
 	},
 
 	setupDrag: function(els) {

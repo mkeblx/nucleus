@@ -2,9 +2,12 @@
 
 a minimal project management app
 
-### design
+![screen](https://raw.github.com/mkeblx/nucleus/master/public/img/screen.png)
+
+### design goals
 
 * single page application
 * Backbone-based
-* decoupled via API layer, could easily change to other backend
+* decoupled API, switchable backend
 * single user, personal projects
+* performant

@@ -18,14 +18,15 @@ module.exports = function(grunt) {
 			},
 			libs: {
 				src: [
-					'<%= dir.libs %>json2.min.js',
-					'<%= dir.libs %>console.js',
-					'<%= dir.libs %>jquery.min.js',
 					'<%= dir.libs %>lodash.min.js',
+					'<%= dir.libs %>console.js',
+					'<%= dir.libs %>json2.min.js',
+					'<%= dir.libs %>jquery.min.js',
 					'<%= dir.libs %>backbone-min.js',
+					//'<%= dir.libs %>backbone.localStorage.js',					
 					'<%= dir.libs %>packery.pkgd.min.js',
 					'<%= dir.libs %>draggabilly.pkgd.min.js',
-					'<%= dir.libs %>d3.v3.min.js'
+					//'<%= dir.libs %>d3.v3.min.js',
 					],
 				dest: '<%= dir.libs %>libs.js'
 			}
@@ -34,8 +35,8 @@ module.exports = function(grunt) {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh:MM") %> */\n',
 				beautify: {
-					width: 80,
-					beautify: true
+					width: 0,
+					beautify: false
 				}
 			},
 			build: {
