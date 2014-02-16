@@ -20,8 +20,6 @@ $(function(){
 
 var pckry;
 
-var $projects;
-
 var router;
 
 var appView;
@@ -40,8 +38,6 @@ function init() {
 			$('.loading').fadeOut(200); });
 
 
-	$projects = $('#projects');
-
 	setupPackery();
 
 	setupBB();
@@ -54,9 +50,9 @@ function setupBB() {
 
 	appView = new ns.AppView();
 
-	router = new ns.Router;
+	router = new ns.Router();
 
-	Backbone.history.start({pushState: true});
+	Backbone.history.start({ pushState: true });
 
 
 
@@ -73,7 +69,7 @@ function setupBB() {
 }
 
 function setupPackery() {
-	pckry = new Packery($projects[0], {
+	pckry = new Packery($('#projects')[0], {
 		itemSelector: '.proj',
 		gutter: 10
 	});

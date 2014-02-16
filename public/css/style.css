@@ -53,45 +53,46 @@ body {
   background-color: #fff;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in;
+  transition: width, height 0.3s ease-in;
 }
 
-/* line 64, sass/style.scss */
+/* line 65, sass/style.scss */
 .proj.u1 {
   width: 150px;
   height: 200px;
 }
 
-/* line 69, sass/style.scss */
+/* line 70, sass/style.scss */
 .proj.u2 {
   width: 225px;
   height: 300px;
 }
 
-/* line 74, sass/style.scss */
+/* line 75, sass/style.scss */
 .proj.u3 {
   width: 300px;
   height: 400px;
 }
 
-/* line 79, sass/style.scss */
+/* line 80, sass/style.scss */
 .proj:hover {
   cursor: pointer;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 84, sass/style.scss */
+/* line 85, sass/style.scss */
 .proj:hover .corner {
   cursor: pointer;
   border-left-width: 35px;
   border-top-width: 35px;
 }
 
-/* line 91, sass/style.scss */
+/* line 92, sass/style.scss */
 #projects > div .content {
   padding: 10px;
 }
 
-/* line 95, sass/style.scss */
+/* line 96, sass/style.scss */
 .title {
   font-size: 24px;
   font-weight: 400;
@@ -101,7 +102,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 104, sass/style.scss */
+/* line 105, sass/style.scss */
 .desc {
   font-size: 16px;
   line-height: 22px;
@@ -109,7 +110,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 111, sass/style.scss */
+/* line 112, sass/style.scss */
 .u1 .title {
   font-size: 18px;
   line-height: 18px;
@@ -117,13 +118,13 @@ body {
   margin-bottom: 8px;
 }
 
-/* line 118, sass/style.scss */
+/* line 119, sass/style.scss */
 .u1 .desc {
   font-size: 14px;
   line-height: 18px;
 }
 
-/* line 123, sass/style.scss */
+/* line 124, sass/style.scss */
 .u2 .title {
   font-size: 22px;
   line-height: 22px;
@@ -131,13 +132,13 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 130, sass/style.scss */
+/* line 131, sass/style.scss */
 .u2 .desc {
   font-size: 15px;
   line-height: 21px;
 }
 
-/* line 135, sass/style.scss */
+/* line 136, sass/style.scss */
 .corner {
   width: 0;
   height: 0;
@@ -150,7 +151,7 @@ body {
 }
 
 /* buttons */
-/* line 149, sass/style.scss */
+/* line 150, sass/style.scss */
 .btn {
   border: 1px solid #ddd;
   border-radius: 3px;
@@ -164,31 +165,31 @@ body {
   user-select: none;
 }
 
-/* line 164, sass/style.scss */
+/* line 165, sass/style.scss */
 .btn i {
   font-weight: 300;
   font-style: normal;
 }
 
-/* line 169, sass/style.scss */
+/* line 170, sass/style.scss */
 .btn:hover {
   cursor: pointer;
   background-color: #fafafa;
 }
 
-/* line 176, sass/style.scss */
+/* line 177, sass/style.scss */
 .loading {
   margin-left: 3px;
   margin-bottom: 2px;
 }
 
 /* misc */
-/* line 183, sass/style.scss */
+/* line 184, sass/style.scss */
 .pull-right {
   float: right;
 }
 
-/* line 184, sass/style.scss */
+/* line 185, sass/style.scss */
 .pull-left {
   float: left;
 }

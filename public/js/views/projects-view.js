@@ -7,8 +7,8 @@ ns.ProjectsView = Backbone.View.extend({
 	pTmpl: _.template($('#proj-mini-tmpl').html()),
 
 	events: {
-		'click .corner' : 'details',
-		'click' : 'show'
+		'click .proj .corner' : 'details',
+		'click .proj' : 'show'
 	},
 
 	initialize: function() {
@@ -62,17 +62,24 @@ ns.ProjectsView = Backbone.View.extend({
 	},
 
 	details: function(ev) {
-		console.log('corner details');
+		var id = $(ev.target).parent().data('id');
+		console.log('show details for: ' + id);
 	},
 
 	show: function(ev) {
-		if ($(ev.target).is('.corner')) {
+		var $el = $(ev.currentTarget);
+
+		if ($el.is('.corner')) {
 			ev.preventDefault();
 			return;
 		}
 
-		//todo: route to project and update accordingly
-		console.log('enter project');
+		$el.toggleClass('u1').toggleClass('u2');
+		setTimeout(function(){ pckry.layout(); }, 350);
+
+		var id = $el.data('id');
+		var title = $el.find('.title').html();
+		router.navigate('projects/'+slugify(title), { trigger: true });
 	}
 
 });

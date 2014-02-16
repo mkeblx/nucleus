@@ -12,17 +12,18 @@ ns.Router = Backbone.Router.extend({
 
 	default: function() {
 		console.log('default route');
-		this.projects();
+		this.navigate('projects', {trigger: true});
 	},
 
 	projects: function() {
 		console.log('projects route');
-		this.navigate('projects');
+		//this.navigate('projects');
 		Backbone.trigger('nav', {title: 'projects'});
 	},
 
-	projectView: function() {
+	projectView: function(id) {
 		console.log('project view route');
+		Backbone.trigger('nav', {title: 'projects / '+id});
 	}
 
 });

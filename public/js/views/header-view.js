@@ -23,15 +23,11 @@ ns.HeaderView = Backbone.View.extend({
 	createProject: function() {
 		var name = prompt('Enter name for new project', 'Project name');
 
-		if(!name)
-			return;
+		if (!name) return;
 
 		var project = new ns.Project({ name: name });
 		
 		projects.create(project);
-
-		//
-		//projectsView.addProject(project);
 	}
 
 });
