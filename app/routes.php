@@ -7,19 +7,7 @@ define('NUM',   '[0-9]+');
 define('ANUM',  '[A-Za-z0-9]+');
 define('HEX',   '[A-Fa-f0-9]+');
 
-
-// single page app
-Route::get('/', ['as' => 'root', function(){
-	return View::make('index');
-}]);
-
-
-//auth
-Route::post('login', ['as' => 'login',  'uses' => 'AuthController@login']);
-Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
-
-//tmp: guest => auth
-Route::group(['before' => 'guest|ajax'], function() {
+Route::group(['before' => 'ajax'], function() {
 
 	Route::resource('projects', 'ProjectController');
 
@@ -30,3 +18,14 @@ Route::group(['before' => 'guest|ajax'], function() {
 	//Route::resource('tag', 'TagController');
 
 });
+
+// single page app
+Route::any('{rsc?}', ['before' => 'noajax', 'as' => 'root', function($rsc = 'index'){
+	return View::make('index');
+}]);
+
+
+//auth
+//Route::post('login', ['as' => 'login',  'uses' => 'AuthController@login']);
+//Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
+

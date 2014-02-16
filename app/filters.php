@@ -93,6 +93,23 @@ Route::filter('ajax', function()
 {
 	if (!Request::ajax())
 	{
-		return Redirect::route('root');
+		return View::make('index');	
+	}
+});
+
+/*
+|--------------------------------------------------------------------------
+| No Ajax Filter
+|--------------------------------------------------------------------------
+|
+| Only allow non-ajax requests
+|
+*/
+
+Route::filter('noajax', function()
+{
+	if (Request::ajax())
+	{
+		throw new Exception;
 	}
 });
