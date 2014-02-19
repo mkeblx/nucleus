@@ -18,7 +18,7 @@ body {
   margin: 0 auto;
 }
 
-/* line 24, sass/style.scss */
+/* line 22, sass/style.scss */
 #head h1 {
   font-size: 34px;
   line-height: 34px;
@@ -26,8 +26,11 @@ body {
   margin-top: 0px;
   margin-bottom: 26px;
 }
-
 /* line 32, sass/style.scss */
+#head .bread span {
+  cursor: pointer;
+}
+/* line 38, sass/style.scss */
 #head .btn {
   padding: 8px 12px 13px;
   border: 1px solid #ddd;
@@ -35,7 +38,7 @@ body {
   line-height: 22px;
 }
 
-/* line 39, sass/style.scss */
+/* line 46, sass/style.scss */
 #main-container {
   outline: 1px solid #ddd;
   position: relative;
@@ -46,7 +49,7 @@ body {
 }
 
 /* projects */
-/* line 54, sass/style.scss */
+/* line 61, sass/style.scss */
 .proj {
   border: 1px solid #333;
   margin-left: 0px;
@@ -56,43 +59,43 @@ body {
   transition: width, height 0.3s ease-in;
 }
 
-/* line 65, sass/style.scss */
+/* line 72, sass/style.scss */
 .proj.u1 {
   width: 150px;
   height: 200px;
 }
 
-/* line 70, sass/style.scss */
+/* line 77, sass/style.scss */
 .proj.u2 {
   width: 225px;
   height: 300px;
 }
 
-/* line 75, sass/style.scss */
+/* line 82, sass/style.scss */
 .proj.u3 {
   width: 300px;
   height: 400px;
 }
 
-/* line 80, sass/style.scss */
+/* line 87, sass/style.scss */
 .proj:hover {
   cursor: pointer;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 85, sass/style.scss */
+/* line 92, sass/style.scss */
 .proj:hover .corner {
   cursor: pointer;
   border-left-width: 35px;
   border-top-width: 35px;
 }
 
-/* line 92, sass/style.scss */
+/* line 99, sass/style.scss */
 #projects > div .content {
   padding: 10px;
 }
 
-/* line 96, sass/style.scss */
+/* line 103, sass/style.scss */
 .title {
   font-size: 24px;
   font-weight: 400;
@@ -102,7 +105,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 105, sass/style.scss */
+/* line 112, sass/style.scss */
 .desc {
   font-size: 16px;
   line-height: 22px;
@@ -110,7 +113,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 112, sass/style.scss */
+/* line 119, sass/style.scss */
 .u1 .title {
   font-size: 18px;
   line-height: 18px;
@@ -118,13 +121,13 @@ body {
   margin-bottom: 8px;
 }
 
-/* line 119, sass/style.scss */
+/* line 126, sass/style.scss */
 .u1 .desc {
   font-size: 14px;
   line-height: 18px;
 }
 
-/* line 124, sass/style.scss */
+/* line 131, sass/style.scss */
 .u2 .title {
   font-size: 22px;
   line-height: 22px;
@@ -132,13 +135,13 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 131, sass/style.scss */
+/* line 138, sass/style.scss */
 .u2 .desc {
   font-size: 15px;
   line-height: 21px;
 }
 
-/* line 136, sass/style.scss */
+/* line 143, sass/style.scss */
 .corner {
   width: 0;
   height: 0;
@@ -151,7 +154,7 @@ body {
 }
 
 /* buttons */
-/* line 150, sass/style.scss */
+/* line 157, sass/style.scss */
 .btn {
   border: 1px solid #ddd;
   border-radius: 3px;
@@ -165,31 +168,31 @@ body {
   user-select: none;
 }
 
-/* line 165, sass/style.scss */
+/* line 172, sass/style.scss */
 .btn i {
   font-weight: 300;
   font-style: normal;
 }
 
-/* line 170, sass/style.scss */
+/* line 177, sass/style.scss */
 .btn:hover {
   cursor: pointer;
   background-color: #fafafa;
 }
 
-/* line 177, sass/style.scss */
+/* line 184, sass/style.scss */
 .loading {
   margin-left: 3px;
   margin-bottom: 2px;
 }
 
 /* misc */
-/* line 184, sass/style.scss */
+/* line 191, sass/style.scss */
 .pull-right {
   float: right;
 }
 
-/* line 185, sass/style.scss */
+/* line 192, sass/style.scss */
 .pull-left {
   float: left;
 }

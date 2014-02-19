@@ -14,8 +14,7 @@ ns.AppView = Backbone.View.extend({
 	},
 
 	updatePageTitle: function(data) {
-		console.log('update page title');
-		var title = [app.name, data.title].join(' / ');
+		var title = [data.title].join(' / ');
 		$(document).attr('title', title);
 	},
 

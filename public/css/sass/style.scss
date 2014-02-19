@@ -19,21 +19,28 @@ body {
 
 #head {
 
-}
+	h1 {
+		font-size: 34px;
+		line-height: 34px;
+		font-weight: 300;
+		margin-top: 0px;
+		margin-bottom: 26px;
+	}
 
-#head h1 {
-	font-size: 34px;
-	line-height: 34px;
-	font-weight: 300;
-	margin-top: 0px;
-	margin-bottom: 26px;
-}
+	.bread {
 
-#head .btn {
-	padding: 8px 12px 13px;
-	border: 1px solid #ddd;
-	font-size: 22px;
-	line-height: 22px;
+		span {
+			cursor: pointer;
+		}
+
+	}
+
+	.btn {
+		padding: 8px 12px 13px;
+		border: 1px solid #ddd;
+		font-size: 22px;
+		line-height: 22px;
+	}
 }
 
 #main-container {

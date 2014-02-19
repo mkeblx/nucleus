@@ -2,7 +2,7 @@ ns.Router = Backbone.Router.extend({
 
 	routes: {
 		'projects'     : 'projects',
-		'projects/:id' : 'projectView',
+		'projects/:name' : 'projectView',
 		'*other'       : 'default'
 	},
 
@@ -11,19 +11,19 @@ ns.Router = Backbone.Router.extend({
 	},
 
 	default: function() {
-		console.log('default route');
 		this.navigate('projects', {trigger: true});
 	},
 
 	projects: function() {
-		console.log('projects route');
-		//this.navigate('projects');
-		Backbone.trigger('nav', {title: 'projects'});
+		var pieces = [{type: 'type', text: 'projects', route: 'projects'}];
+		Backbone.trigger('nav', {pieces: pieces});
 	},
 
-	projectView: function(id) {
-		console.log('project view route');
-		Backbone.trigger('nav', {title: 'projects / '+id});
+	projectView: function(name) {
+		var pieces = [
+			{type: 'type', text: 'projects', route: 'projects'},
+			{type: 'resource', 'text': name, route: null}];
+		Backbone.trigger('nav', {pieces : pieces});
 	}
 
 });
