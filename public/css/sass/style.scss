@@ -152,6 +152,46 @@ body {
 	transition: border 0.3s ease-in;
 }
 
+/* project */
+
+.proj-page {
+	background-color: #fff;
+	border: 1px solid #333;
+	box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+	min-height: 920px;
+
+	.content {
+		margin: 10px;
+
+		h1 {
+			margin: 0;
+			margin-bottom: 10px;
+
+			font-size: 26px;
+			line-height: 26px;
+			font-weight: 400;
+		}
+
+		h2 {
+			font-size: 20px;
+			line-height: 20px;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 300;
+			margin: 0px;
+
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 22px;
+			margin-bottom: 22px;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 300;
+		}
+	}
+
+}
+
 /* buttons */
 
 .btn {

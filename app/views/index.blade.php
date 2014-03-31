@@ -17,6 +17,7 @@
 	</div>
 	<div id="main-container">
 		<div id="projects"></div>
+		<div id="project"></div>
 	</div>
 </div>
 

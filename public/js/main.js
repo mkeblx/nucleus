@@ -10,20 +10,11 @@ app.config = {
 	debug: 1
 };
 
-
-
-$(function(){
-	setTimeout(init, 600);
-});
-
-
-
 var pckry;
 
 var router;
 
 var appView;
-var header;
 
 var projects;
 
@@ -46,14 +37,11 @@ function init() {
 function setupBB() {
 	projects = new ns.Projects();
 
-	header = new ns.HeaderView();
-
 	appView = new ns.AppView();
 
 	router = new ns.Router();
 
 	Backbone.history.start({ pushState: true });
-
 
 
 	projects.fetch({
@@ -76,3 +64,8 @@ function setupPackery() {
 
 	pckry.bindResize();
 }
+
+
+$(function(){
+	setTimeout(init, 600);
+});

@@ -1,16 +1,16 @@
 ns.ProjectView = Backbone.View.extend({
 
 	tagName: 'div',
-	'class': 'proj',
+	'class': 'proj-page',
 
-	tmpl: _.template($('#proj-tmpl')),
+	tmpl: _.template($('#proj-tmpl').html()),
 
 	events: {
-		'click .corner': 'details'
+
 	},
 
 	render: function() {
-		this.$el.html(this.tmpl(this.model.attributes));
+		this.el = this.tmpl(this.model.attributes);
 		return this;
 	},
 

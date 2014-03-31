@@ -74,12 +74,17 @@ ns.ProjectsView = Backbone.View.extend({
 			return;
 		}
 
-		//$el.toggleClass('u1').toggleClass('u2');
-		//setTimeout(function(){ pckry.layout(); }, 350);
-
 		var id = $el.data('id');
 		var name = $el.find('.title').html();
 		router.navigate('projects/'+slugify(name), { trigger: true });
+
+		var project = projects.get(id);
+
+		var pC = $('#project');
+		pC.empty();
+
+		var pV = new ns.ProjectView({model: project});
+		pC.html(pV.render().el);
 	}
 
 });
